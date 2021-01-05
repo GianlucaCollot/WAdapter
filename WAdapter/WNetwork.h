@@ -487,8 +487,8 @@ true ||
 				//WebThings
 				if (this->isSupportingWebThing()) {
 					//Make the thing discoverable
-					//String mdnsName = getHostName() + ".local";
-					String mdnsName = this->getDeviceIp().toString();
+					String mdnsName = getHostName(); // + ".local"; // deos not neet .local
+					//String mdnsName = this->getDeviceIp().toString();
 					wlog->notice(F("MDNS init, name: %s"), mdnsName.c_str());
 					logHeap(PSTR("MDNS Init"));
 					MDNS.end();
